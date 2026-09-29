@@ -1,0 +1,3 @@
+pytest test count: 38 passed
+local commit hash: 38476d00fabff82db94927ddd1bf1c0eb6c6be30
+summary: Built AI Cost Exchange as an installable Python CLI with editable, versioned provider price fixtures, named DAG workflow validation, Decimal-based cost and cache modelling, throughput-derived duration, provider and architecture comparison, ranked sensitivity analysis, and Markdown and HTML reports with complete assumption ledgers and the required honesty banner. Added a 38-test pytest suite, fixture workflows, quickstart and architecture documentation, freshness warnings, and repository ignores for prompt, launcher, log, and Python build residue.
