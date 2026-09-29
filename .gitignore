@@ -1,0 +1,17 @@
+# Prompt, launcher, and log residue from the build environment.
+ac-prompt.txt
+ac-launch.py
+ac-codex.log
+*.log
+
+# Python build and test artifacts.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.venv/
+venv/
