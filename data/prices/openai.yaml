@@ -1,0 +1,39 @@
+provider:
+  id: openai
+  name: OpenAI
+version: 1
+effective_date: 2026-08-15
+freshness_days: 90
+default_architecture: direct
+models:
+  mini:
+    display_name: Mini fixture model
+    input_per_million: 0.15
+    output_per_million: 0.60
+    tokens_per_second: 1000
+  standard:
+    display_name: Standard fixture model
+    input_per_million: 0.50
+    output_per_million: 2.00
+    tokens_per_second: 700
+  flagship:
+    display_name: Flagship fixture model
+    input_per_million: 2.50
+    output_per_million: 10.00
+    tokens_per_second: 250
+architectures:
+  direct:
+    description: Fast model for fast tasks and flagship model for quality tasks.
+    model_map:
+      fast: mini
+      quality: flagship
+  economy:
+    description: Fast model for fast tasks and standard model for quality tasks.
+    model_map:
+      fast: mini
+      quality: standard
+  quality_first:
+    description: Flagship model for every task.
+    model_map:
+      fast: flagship
+      quality: flagship

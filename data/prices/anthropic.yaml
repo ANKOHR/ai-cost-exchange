@@ -1,0 +1,39 @@
+provider:
+  id: anthropic
+  name: Anthropic
+version: 1
+effective_date: 2026-08-15
+freshness_days: 90
+default_architecture: direct
+models:
+  haiku:
+    display_name: Haiku fixture model
+    input_per_million: 0.80
+    output_per_million: 4.00
+    tokens_per_second: 900
+  sonnet:
+    display_name: Sonnet fixture model
+    input_per_million: 3.00
+    output_per_million: 15.00
+    tokens_per_second: 300
+  opus:
+    display_name: Opus fixture model
+    input_per_million: 15.00
+    output_per_million: 75.00
+    tokens_per_second: 100
+architectures:
+  direct:
+    description: Haiku for fast tasks and Opus for quality tasks.
+    model_map:
+      fast: haiku
+      quality: opus
+  economy:
+    description: Haiku for fast tasks and Sonnet for quality tasks.
+    model_map:
+      fast: haiku
+      quality: sonnet
+  quality_first:
+    description: Opus for every task.
+    model_map:
+      fast: opus
+      quality: opus

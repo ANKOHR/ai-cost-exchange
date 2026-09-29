@@ -1,0 +1,26 @@
+version: 1
+name: support-intake
+assumptions:
+  monthly_runs: 10000
+  repeat_rate: 0.25
+steps:
+  - id: triage
+    model: fast
+    input_tokens: 1200
+    output_tokens: 120
+    calls_per_run: 1
+    cacheable: true
+  - id: draft
+    model: quality
+    input_tokens: 1320
+    output_tokens: 500
+    calls_per_run: 1
+    cacheable: false
+    depends_on: [triage]
+  - id: finalize
+    model: fast
+    input_tokens: 1820
+    output_tokens: 80
+    calls_per_run: 1
+    cacheable: true
+    depends_on: [draft]
